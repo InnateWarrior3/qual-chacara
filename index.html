@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qual Chácara?</title>
+<meta name="description" content="As 5 chácaras do feriadão de 19 a 22/nov: fotos, prós e contras, rota e pedágio. Monte seu ranking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- Tela de entrada: nome -->
+<div class="entrada" id="entrada">
+  <form class="entrada-caixa" id="form-nome">
+    <p class="selo">Feriadão 19–22/nov · 10 pessoas</p>
+    <h1>Qual chácara? <span aria-hidden="true">🏡</span></h1>
+    <p>Dá uma olhada nas 5 opções e no final monta o seu ranking. Primeiro, quem é você?</p>
+    <label for="campo-nome">Seu nome</label>
+    <input id="campo-nome" name="nome" autocomplete="given-name" maxlength="40" required placeholder="Ex.: Lucas">
+    <button type="submit" class="botao">Bora ver as chácaras</button>
+  </form>
+</div>
+
+<header class="topo">
+  <div class="topo-dentro">
+    <a class="marca" href="#inicio">Qual chácara? 🏡</a>
+    <nav class="atalhos" id="atalhos" aria-label="Ir para chácara"></nav>
+    <button class="quem" id="quem" type="button" title="Trocar nome"></button>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="abertura">
+    <p class="selo">Feriadão 19–22/nov · 10 pessoas · saindo de Barão Geraldo</p>
+    <h1>Cinco chácaras, um grupo indeciso.</h1>
+    <p class="lead">Fotos, o que tem de bom e de ruim, quanto custa por pessoa e quanto tempo de estrada. No fim, você arruma as cinco do 1º ao 5º lugar.</p>
+    <div class="mapa-geral" id="mapa-geral"></div>
+    <p class="nota-pequena">Preço por pessoa dividindo por 10. “2 noites” = sex→dom, “3 noites” = qui→dom. Valores do Airbnb de 21/10/2026, podem mudar até a reserva.</p>
+  </section>
+
+  <div id="lista"></div>
+
+  <section class="votacao" id="ranking">
+    <h2>Seu ranking</h2>
+    <p>Use as setas para deixar em 1º a que você mais quer. Pode mudar e mandar de novo quantas vezes quiser; vale o último envio.</p>
+    <ol class="rank" id="rank"></ol>
+    <label for="campo-obs">Comentário (opcional)</label>
+    <textarea id="campo-obs" maxlength="280" rows="2" placeholder="Ex.: topo qualquer uma, desde que tenha churrasco"></textarea>
+    <button class="botao" id="enviar" type="button">Enviar meu ranking</button>
+    <p class="status" id="status" role="status"></p>
+  </section>
+
+  <section class="painel" id="painel" hidden>
+    <h2>Painel do Henrique 📊</h2>
+    <p class="status" id="painel-status">Carregando votos…</p>
+    <div id="painel-conteudo"></div>
+    <button class="botao secundario" id="atualizar" type="button">Atualizar</button>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>Rotas: OpenStreetMap/OSRM, tempo aproximado sem trânsito. Pedágio: tarifa de carro desde 01/07/2026 (Artesp e concessionárias). Fotos dos anúncios do Airbnb.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="dados.js"></script>
+<script src="rotas.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
